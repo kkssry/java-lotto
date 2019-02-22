@@ -9,7 +9,6 @@ public class Lotto {
     private static final int LOTTO_NUMBER_COUNT = 45;
     private static List<Num> initLottoNumber = new ArrayList<>();
     private List<Num> lotto;
-    private Num bonusNum;
 
     static {
         for (int i = 1; i <= LOTTO_NUMBER_COUNT; i++) {
@@ -17,19 +16,22 @@ public class Lotto {
         }
     }
 
-    Lotto() {
+    Lotto() {                   //자동 로또
         Collections.shuffle(initLottoNumber);
         lotto = new ArrayList<>(initLottoNumber.subList(0, 6));
         Collections.sort(lotto);
     }
 
-    Lotto(Set<Num> winningLotto, Num bonusNum) {
-        lotto = new ArrayList<>(winningLotto);
-        this.bonusNum = bonusNum;
+    Lotto(Set<Num> lottoByInputed) {
+        lotto = new ArrayList<>(lottoByInputed);
     }
 
+//    Lotto(Set<Num> manualLotto){       //수동 로또
+//        lotto = new ArrayList<>(manualLotto);
+//    }
+
+
     public int gameStart(Lotto winningLotto) {
-        this.bonusNum = winningLotto.bonusNum;
         int count = 0;
         for (Num num : winningLotto.lotto) {
             if (lotto.contains(num))
@@ -38,7 +40,7 @@ public class Lotto {
         return count;
     }
 
-    public Boolean isMatchBonusNum(){
+    public Boolean isMatchBonusNum(Num bonusNum){
         return lotto.contains(bonusNum);
     }
 

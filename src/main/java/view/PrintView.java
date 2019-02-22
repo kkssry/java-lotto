@@ -7,8 +7,8 @@ import lotto.Reward;
 import util.Utility;
 
 public class PrintView {
-    public static void printLottoCount(int lottoCount) {
-        System.out.println(lottoCount + "개를 구매했습니다.");
+    public static void printLottoCount(int lottoCount, int manualLottoCount) {
+        System.out.println("수동으로 " + manualLottoCount + "장," + "자동으로 " + (lottoCount-manualLottoCount) + "개를 구매했습니다.");
     }
 
     public static void printResult(Reward reward, int sumPurchasingPrice) {

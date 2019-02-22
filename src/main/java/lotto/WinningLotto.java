@@ -29,6 +29,10 @@ public class WinningLotto {
     }
 
     public Lotto makeWinningLotto() {
-        return new Lotto(winningLotto,bonusNum);
+        return new Lotto(winningLotto);
+    }
+
+    public Boolean checkMatchBonusNum(Lotto userLottos) {
+        return userLottos.isMatchBonusNum(bonusNum);
     }
 }

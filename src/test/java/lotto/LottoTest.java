@@ -34,16 +34,16 @@ public class LottoTest {
         }
     }
 
-    @Test
-    public void matchNumTest() {
-        UserLotto userLotto = new UserLotto(3);
-        for (LottoDto lottodto : userLotto.toDto().getUserLottoDto()) {
-            System.out.println(lottodto);
-        }
-        String[] num = {"10","20","24","25","16","30"};
-        Lotto lotto = new WinningLotto(num,new Num(4)).makeWinningLotto();
-        System.out.println(userLotto.toDto().getUserLottoDto().contains(lotto.toDto()));
-    }
+//    @Test
+//    public void matchNumTest() {
+//        UserLotto userLotto = new UserLotto(3);
+//        for (LottoDto lottodto : userLotto.toDto().getUserLottoDto()) {
+//            System.out.println(lottodto);
+//        }
+//        String[] num = {"10","20","24","25","16","30"};
+//        Lotto lotto = new WinningLotto(num,new Num(4)).makeWinningLotto();
+//        System.out.println(userLotto.toDto().getUserLottoDto().contains(lotto.toDto()));
+//    }
 
     @Test
     public void setContainTest() {
